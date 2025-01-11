@@ -19,3 +19,5 @@ Use this as a starting point to complete the WDD 231 personal activity. We will 
 
 
 ## chipper-shortbread-0ff02a // https://chipper-shortbread-0ff02a.netlify.app/
+
+## Start the server with npm run start in terminal
