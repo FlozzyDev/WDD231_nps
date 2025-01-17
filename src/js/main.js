@@ -3,20 +3,17 @@ import { getParkData } from "./parkService.mjs";
 const parkData = getParkData();
 
 function parkInfoTemplate(info) {
-    return `
-      <h1 id="park-name-title">${info.name}</h1>
-      <p id="park-name-details">${info.designation}<br>${info.states}</p>
-    `;
-  }
-  
-  const disclaimer = document.querySelector(".disclaimer > a");
-  disclaimer.href = parkData.url;
-  disclaimer.innerHTML = parkData.fullName;
-  
-  document.title = parkData.fullName;
-  
-  const heroImage = document.querySelector("#park-hero-image img");
-  heroImage.src = parkData.images[0].url;
-  
-  const parkNameSection = document.querySelector("#park-name");
-  parkNameSection.innerHTML = parkInfoTemplate(parkData);
+  return `<a href="/" class="hero-banner__title">${info.name}</a>
+  <p class="hero-banner__subtitle">
+    <span>${info.designation}</span>
+    <span>${info.states}</span>
+  </p>`;
+}
+
+const disclaimer = document.querySelector(".disclaimer > a");
+disclaimer.href = parkData.url;
+disclaimer.innerHTML = parkData.fullName;
+document.querySelector("head > title").textContent = parkData.fullName;
+document.querySelector(".hero-banner > img").src = parkData.images[0].url;
+document.querySelector(".hero-banner__content").innerHTML =
+  parkInfoTemplate(parkData);
