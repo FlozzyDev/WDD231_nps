@@ -196,11 +196,6 @@ a:hover {
   border-left: 1px solid var(--bs-grey-5);
 }
 
-/* Park header */
-
-#park-header {
-}
-
 /* Hero banner */
 .hero-banner {
   display: grid;
@@ -261,6 +256,69 @@ a:hover {
   color: var(--bs-white);
 }
 
+.intro {
+  margin: 1rem 5rem 1rem;
+  height: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-cards-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 5rem;
+}
+
+.media-card a {
+  text-decoration: none !important;
+  color: var(--bs-black); 
+}
+
+.media-card h3:hover {
+  color: var(--bs-crete); /* this looks nice, using that! */ 
+}
+
+.media-card h3 {
+  margin: 0.5rem 0;
+}
+
+.media-card > p {
+  font-size: 0.8em;
+  line-height: 1.5;
+  color: var(--bs-grey-2);
+}
+
+.media-cards-container img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    max-height: 80vh;
+    object-fit: cover;
+}
+
+.media-cards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 1rem 4rem;
+}
+
+@media screen and (max-width: 800px) {
+  .media-cards-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center; 
+    margin: 1rem 5rem; 
+  }
+}
+
+
+
 /* Utility styles */
 
 .visually-hidden {
@@ -280,7 +338,28 @@ a:hover {
   padding: 0 1em;
 }
 
-/* svg {
-  background-color: var(--bs-black);
-  fill: white;
-} */
+.park-footer
+{
+  background-image: url('../images/topo_pattern.png');
+  padding: 1.6em;
+}
+
+.park-footer h3 {
+  font-family: var(--bs-font-serif);
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.park-footer h4 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.8em;
+}
+
+.park-footer p {
+  font-size: 0.8em;
+  line-height: 1;
+  color: var(--bs-grey-5);
+  margin: 0.5rem 0;
+}
+
