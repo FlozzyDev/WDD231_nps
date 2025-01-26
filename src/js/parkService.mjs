@@ -1,3 +1,4 @@
+
 const park = {
   id: "F58C6D24-8D10-4573-9826-65D42B8B83AD",
   url: "https://www.nps.gov/yell/index.htm",
@@ -201,10 +202,38 @@ const parkInfoLinks = [
   }
 ];
 
-export function getParkData() {
-  return park;
+const baseUrl = "https://developer.nps.gov/api/v1/";
+const apiKey = import.meta.env.VITE_NPS_API_KEY;
+
+async function getJson(url) {
+  const options = {
+    method: "GET",
+    headers: {
+      "X-Api-Key": apiKey
+    }
+  };
+  let data = {};
+  const response = await fetch(baseUrl + url, options);
+  if (response.ok) {
+    data = await response.json();
+  } else throw new Error("response not ok");
+  return data;
 }
-export function getParkInfoLinks()
-{
-  return parkInfoLinks;
+
+export function getParkInfoLinks(data) {
+  const cardImages = parkInfoLinks.map((item, index) => {
+    item.image = data[index + 2].url;
+    return item;
+  });
+  return cardImages;
+}
+
+export async function getParkData() {
+  const parkData = await getJson("parks?parkCode=yell");
+  return parkData.data[0];
+}
+
+export async function getParkVisitorCenters(code) {
+  const parkData = await getJson(`visitorcenters?parkCode=${code}`);
+  return parkData.data;
 }
