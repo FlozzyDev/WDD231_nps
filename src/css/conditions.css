@@ -1,0 +1,127 @@
+#main {
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+}
+
+#main section {
+    background: white;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+#main section h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Rest of your CSS scoped to conditions page */
+#main .alerts > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main .alert {
+    display: flex;
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+    align-items: flex-start;
+}
+
+#main .alert:last-child {
+    border-bottom: none;
+}
+
+#main .alert svg {
+    flex-shrink: 0;
+    margin-right: 1rem;
+    width: 24px;
+    height: 24px;
+}
+
+#main .alert h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+    color: #c00;
+}
+
+#main .alert p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+#main .visitor details {
+    border: none;
+}
+
+#main .visitor details summary {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-weight: bold;
+}
+
+#main .visitor details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#main .visitor details ul li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#main .visitor details ul li:last-child {
+    border-bottom: none;
+}
+
+#main .visitor details ul li h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+#main .visitor details ul li p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+#main .activities details {
+    border: none;
+}
+
+#main .activities details summary {
+    cursor: pointer;
+    padding: 0.5rem 0;
+    font-weight: bold;
+}
+
+#main .activities details ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+#main .activities details ul li {
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+#main details summary {
+    list-style: none;
+}
+
+#main details summary::before {
+    content: '▶';
+    display: inline-block;
+    margin-right: 0.5rem;
+    transform: rotate(0);
+    transition: transform 0.2s;
+}
+
+#main details[open] summary::before {
+    transform: rotate(90deg);
+}

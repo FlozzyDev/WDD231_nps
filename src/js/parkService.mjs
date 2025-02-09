@@ -205,7 +205,26 @@ const parkInfoLinks = [
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
 
+function logApiRequest(url) {
+  console.log(`API Request to: ${baseUrl}${url}`);
+  console.log('API Key present:', !!apiKey);
+}
+
+function logResponse(response) {
+  console.log('Response status:', response?.status);
+  console.log('Response ok:', response?.ok);
+}
+
+function logParkData(data) {
+  console.log('Park data:', {
+      exists: !!data,
+      name: data?.name,
+      parkCode: data?.parkCode
+  });
+}
+
 async function getJson(url) {
+  logApiRequest(url);
   const options = {
     method: "GET",
     headers: {
@@ -214,8 +233,10 @@ async function getJson(url) {
   };
   let data = {};
   const response = await fetch(baseUrl + url, options);
+  logResponse(response);
   if (response.ok) {
     data = await response.json();
+    logParkData(data.data?.[0]);
   } else throw new Error("response not ok");
   return data;
 }
@@ -229,11 +250,22 @@ export function getParkInfoLinks(data) {
 }
 
 export async function getParkData() {
+  try {
   const parkData = await getJson("parks?parkCode=yell");
   return parkData.data[0];
+ } catch (error) {
+  console.warn('walling back to park data');
+  return park;
+ }
 }
 
-export async function getParkVisitorCenters(code) {
-  const parkData = await getJson(`visitorcenters?parkCode=${code}`);
+export async function getParkVisitorCenters(parkCode) {
+  const parkData = await getJson(`visitorcenters?parkCode=${parkCode}`);
   return parkData.data;
 }
+
+export async function getParkAlerts(parkCode) {
+  const parkData = await getJson(`alerts?parkCode=${parkCode}`);
+  return parkData.data;
+}
+

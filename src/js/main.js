@@ -1,7 +1,7 @@
 import "../css/style.css";
 import "../css/home.css";
 import { getParkData, getParkInfoLinks } from "./parkService.mjs";
-import { setHeaderFooter } from "./setheaderFooter.mjs";
+import { setHeaderFooter } from "./setHeaderFooter.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 
 function setIntroSection (parkData) {
