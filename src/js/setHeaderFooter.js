@@ -1,4 +1,4 @@
-import { parkBannerTemplate, footerTemplate } from "./templates.mjs";
+import { parkBannerTemplate, footerTemplate } from "./templates.js";
 
 function setHeaderInfo (parkData) {
   const disclaimer = document.querySelector(".disclaimer > a");

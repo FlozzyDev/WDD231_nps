@@ -1,8 +1,8 @@
 import "../css/style.css";
 import "../css/conditions.css";
-import { getParkData, getParkAlerts, getParkVisitorCenters } from "./parkService.mjs";
-import { setHeaderFooter } from "./setHeaderFooter.mjs";
-import { activityListTemplate, alertTemplate, visitorCenterTemplate } from "./templates.mjs";
+import { getParkData, getParkAlerts, getParkVisitorCenters } from "./parkService.js";
+import { setHeaderFooter } from "./setHeaderFooter.js";
+import { activityListTemplate, alertTemplate, visitorCenterTemplate } from "./templates.js";
 
 document.addEventListener('DOMContentLoaded', () => {
   console.log('DOM Content Loaded - starting initialization');
