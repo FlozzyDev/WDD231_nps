@@ -6,12 +6,19 @@
   "scripts": {
     "start": "vite",
     "build": "vite build --emptyOutDir",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint *.js src/**/*.js",
+    "lint-fix": "eslint *.js src/**/*.js --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "vite": "^5.3.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "eslint": "^9.21.0",
+    "globals": "^16.0.0"
   }
 }

@@ -45,8 +45,7 @@
       <section class="global-header">
         <a href="index.html" class="site-title"
           ><span class="logo" role="presentation"></span>
-          <span>National Park Service</span></a
-        >
+          <span>National Park Service</span></a>
         <div class="global-header__right">
           <a class="search-icon" href="#park-footer">
             <svg class="icon">
@@ -57,7 +56,8 @@
             </svg>
             <span class="visually-hidden">Search</span>
           </a>
-          <button id="global-nav-toggle">
+          <button id="global-nav-toggle" class="global-nav__toggle" area-expanded="false" aria-label="Open Menu"> 
+            <div class="global-nav__toggle--closed">
             <svg class="icon">
               <use
                 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -65,8 +65,36 @@
               ></use>
             </svg>
             <span class="visually-hidden">Open</span> Menu
+            </div>
+            <div class="global-nav__toggle--open">
+            <svg class="icon">
+              <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="images/sprite.symbol.svg#close"
+              ></use>
+            </svg>
+            Close
           </button>
         </div>
+          <nav class="global-nav">
+            <h2 class="global-nav__section-heading">Exploring this Park</h2>
+            <ul class ="global-nav__list">
+              <li>
+                <div class ="global-nav__split-button">
+                  <a href="#">Plan Your Visit</a>
+                  <button class="global-nav__split-button--toggle">
+                    <span class="visually-hidden">Toggle submenu for Plan Your Visit</span>
+                    <svg class="icon" role="presentation" focusable="false">
+                      <use
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xlink:href="images/sprite.symbol.svg#arrow"
+                      ></use>
+                    </svg>
+                  </button>
+                </div>
+              </li>
+            </ul>
+          </nav>
       </section>
       <section id="park-header">
         <div class="hero-banner">

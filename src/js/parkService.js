@@ -250,14 +250,9 @@ export function getParkInfoLinks(data) {
 }
 
 export async function getParkData() {
-  try {
   const parkData = await getJson("parks?parkCode=yell");
   return parkData.data[0];
- } catch (error) {
-  console.warn('walling back to park data');
-  return park;
- }
-}
+ } 
 
 export async function getParkVisitorCenters(parkCode) {
   const parkData = await getJson(`visitorcenters?parkCode=${parkCode}`);
