@@ -65,20 +65,13 @@ async function init() {
         console.log('Initializing conditions page...');
         
         const parkData = await getParkData();
-        console.log('Retrieved park data:', { 
-            parkName: parkData.name,
-            parkCode: parkData.parkCode 
-        });
-
+        console.log('Retrieved park data:', { parkName: parkData.name, parkCode: parkData.parkCode });
         const parkCode = parkData.parkCode;
         console.log('Fetching alerts and visitor centers for park code:', parkCode);
-        
         const alerts = await getParkAlerts(parkCode);
         console.log('Retrieved alerts:', { count: alerts.length });
-        
         const visitorCenters = await getParkVisitorCenters(parkCode);
         console.log('Retrieved visitor centers:', { count: visitorCenters.length });
-
         console.log('Setting header and footer...');
         setHeaderFooter(parkData);
         
@@ -86,9 +79,10 @@ async function init() {
         setAlerts(alerts);
         setVisitorCenters(visitorCenters);
         setActivities(parkData.activities);
-        
         console.log('Page initialization complete');
     } catch (error) {
         console.error('Error during initialization:', error);
     }
 }
+
+init();

@@ -44,7 +44,7 @@ export function footerTemplate (parkData) {
       <h4 id="address-title">Phone:</h4>
       <p class="footer-info__phone-number">${formattedPhoneNumber}</p>
     </div>
-    `
+    `;
   }
 
 export function alertTemplate(alert) {
