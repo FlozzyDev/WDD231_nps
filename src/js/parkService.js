@@ -1,4 +1,3 @@
-
 const park = {
   id: "F58C6D24-8D10-4573-9826-65D42B8B83AD",
   url: "https://www.nps.gov/yell/index.htm",
@@ -262,5 +261,10 @@ export async function getParkVisitorCenters(parkCode) {
 export async function getParkAlerts(parkCode) {
   const parkData = await getJson(`alerts?parkCode=${parkCode}`);
   return parkData.data;
+}
+
+export async function getParkVisitorCenterDetails(id) {
+  const data = await getJson(`visitorcenters?id=${id}`);
+  return data.data[0];
 }
 
