@@ -10,7 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "src/index.html"),
         conditions: resolve(__dirname, "src/conditions.html"),
-        visitor: resolve(_dirname, "src/visitor-center.html"),
+        visitorCenter: resolve(__dirname, "src/visitor-center.html")
       }
     }
   }
